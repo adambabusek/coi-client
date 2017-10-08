@@ -1,0 +1,9 @@
+<div class="jumbotron text-center">
+	<h1>Kontroly České obchodní inspekce</h1>
+	<p>
+		<search-form (notify)="searchResultNotify($event)"></search-form>
+	</p> 
+</div>
+
+<inspection-list [inspections]="searchResult"></inspection-list>
+

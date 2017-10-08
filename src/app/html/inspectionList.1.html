@@ -1,0 +1,54 @@
+
+<ng-container *ngIf="inspections">
+	<div class="container text-center">
+		<div class="row">
+			<span>Počet nalezených kontrol: {{inspections.length}}</span>		
+		</div>
+		<div class="row">
+			<div class="col-sm-8 col-sm-offset-2">
+				<div *ngIf="inspections.length > 0">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th class="text-center">#</th>
+								<th class="text-center">Datum kontroly</th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+						</thead>
+
+						<ng-container *ngFor="let ins of inspections; let i = index">
+							<tr data-toggle="collapse" [attr.data-target]="'#detail' + i">
+								<td>{{i + 1}}</td>
+								<td>{{ins.DatumKontroly}}</td>
+								<!-- <td>
+									<ul>
+										<li *ngFor="let focus of ins.zamereni">
+											{{focus.Zakon}}
+										</li>
+									</ul>
+								</td> -->
+								<td>
+									<span *ngIf="ins.sankce && ins.sankce.length > 0">uložena pokuta</span>
+								</td>
+								<td>
+									<span *ngIf="ins.zakazy && ins.zakazy.length > 0">zakázané výrobky</span>
+								</td>
+								<td>
+									<span *ngIf="ins.zajisteni && ins.zajisteni.length > 0">zabavené padělky</span>
+								</td>
+							</tr>
+							<tr id="detail{{i}}">
+								<td colspan="5">
+									ahoj
+								</td>
+							</tr>
+						</ng-container>
+					</table>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</ng-container>
