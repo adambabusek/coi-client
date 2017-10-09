@@ -14,6 +14,5 @@ export class InspectionList  {
   
   inspectionSelected(inspection: any) {
     this.notifyInspectionSelected.emit(inspection);
-    console.log(inspection);
   }
 }

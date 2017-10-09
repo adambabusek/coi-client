@@ -7,13 +7,20 @@ import { SearchService } from './search.service';
   providers: [SearchService]
 })
 export class SearchForm  {
-  @Output() notify : EventEmitter<any> = new EventEmitter<any>();
+  @Output()
+  notify : EventEmitter<any> = new EventEmitter<any>();
   searchIco: string;
+  resultCnt: number;
 
   constructor(private searchService: SearchService) { }
 
   submit(): void {
     this.searchService.findInspections(this.searchIco)
-                      .then(resp => this.notify.emit(resp));
+                      .then((resp: any) => {
+                            if (resp && resp.inspections) {                              
+                              this.resultCnt = resp.inspections.length;
+                            }
+                            this.notify.emit(resp);
+                            });
   }
 }
