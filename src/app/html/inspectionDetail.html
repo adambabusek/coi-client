@@ -1,0 +1,155 @@
+<ng-container *ngIf="inspection">
+    <table class="table inspection-detail-table borderless">        
+        <colgroup>
+            <col class="col-sm-2">
+            <col class="col-sm-10">
+        </colgroup>
+
+        <!-- datum kontroly -->
+        <tr>
+            <td align="right">
+                <label for="datumKontroly">Datum kontroly:</label>
+            </td>
+            <td>
+                <span id="datumKontroly">{{inspection.DatumKontroly}}</span>
+            </td>
+        </tr>
+        
+        <!-- zamereni -->    
+        <tr>
+            <td align="right">
+                <label for="zamereni">Zaměření:</label>
+            </td>
+            <td>
+                <ul id="zamereni" style="padding-left: 15px">
+                    <li *ngFor="let zam of inspection.zamereni">
+                        {{zam.Zakon}}
+                    </li>
+                </ul>
+            </td>
+        </tr>
+
+        <!-- sankce -->
+        <ng-container *ngIf="inspection.sankce && inspection.sankce.length > 0">
+            <tr>
+                <td align="right">
+                    <label for="sankce">Pokuty:</label>
+                </td>
+                <td>
+                    <ul class="list-group" id="sankce">
+                        <li class="list-group-item" *ngFor="let san of inspection.sankce">
+                            <table class="table inspection-detail-table borderless">        
+                                <colgroup>
+                                    <col class="col-sm-4">
+                                    <col class="col-sm-8">
+                                </colgroup>
+                                <tr>
+                                    <td>
+                                        <label for="MetodaProdeje">Metoda prodeje:</label>
+                                    </td>
+                                    <td>
+                                        <span id="MetodaProdeje">{{san.MetodaProdeje}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="VysePokuty">Výše pokuty:</label>
+                                    </td>
+                                    <td>
+                                        <span id="VysePokuty">{{san.VysePokuty}} Kč</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="Zakon">Výše pokuty:</label>
+                                    </td>
+                                    <td>
+                                        <span id="Zakon">{{san.Zakon}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="Paragraf">Paragraf:</label>
+                                    </td>
+                                    <td>
+                                        <span id="Paragraf">{{san.Paragraf}}</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="DatumNabytiPravniMoci">Datum nabytí právní moci:</label>
+                                    </td>
+                                    <td>
+                                        <span id="DatumNabytiPravniMoci">{{san.DatumNabytiPravniMoci}}</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </ng-container>
+
+        <!-- zakazy -->
+        <ng-container *ngIf="inspection.zakazy && inspection.zakazy.length > 0">
+                <tr>
+                    <td align="right">
+                        <label for="zakazy">Zákazy:</label>
+                    </td>
+                    <td>
+                        <ul class="list-group" id="zakazy">
+                            <li class="list-group-item" *ngFor="let zak of inspection.zakazy">
+                                <table class="table inspection-detail-table borderless">        
+                                    <colgroup>
+                                        <col class="col-sm-2">
+                                        <col class="col-sm-10">
+                                    </colgroup>
+                                    <tr>
+                                        <td>
+                                            <label for="Sortiment">Sortiment:</label>
+                                        </td>
+                                        <td>
+                                            <span id="Sortiment">{{zak.Sortiment}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="Mnozstvi">Množství:</label>
+                                        </td>
+                                        <td>
+                                            <span id="Mnozstvi">{{zak.Mnozstvi}} Kč</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="Jednotka">Jednotka:</label>
+                                        </td>
+                                        <td>
+                                            <span id="Jednotka">{{zak.Jednotka}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="CenaCelkem">Cena:</label>
+                                        </td>
+                                        <td>
+                                            <span id="CenaCelkem">{{zak.CenaCelkem}}</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="DleZakona">Dle zákona:</label>
+                                        </td>
+                                        <td>
+                                            <span id="DleZakona">{{zak.DleZakona}}</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </ng-container>
+    </table>
+
+</ng-container>

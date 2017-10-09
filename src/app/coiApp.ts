@@ -9,8 +9,14 @@ import { SearchForm } from './searchForm';
 export class CoiApp  {
 
   searchResult: any[];
+  detailItem: any;
   
   searchResultNotify(result: any):void {
     this.searchResult = result.inspections;
+    this.detailItem = null;
+  }
+
+  inspectionSelected(inspection: any):void {
+    this.detailItem = inspection;
   }
 }

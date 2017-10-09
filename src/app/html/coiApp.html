@@ -5,5 +5,20 @@
 	</p> 
 </div>
 
-<inspection-list [inspections]="searchResult"></inspection-list>
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-sm-5" style="padding-left: 0px; padding-right: 0px;">
+			<inspection-list [inspections]="searchResult"
+				(notifyInspectionSelected)="inspectionSelected($event)"></inspection-list>
+		</div>
+
+		<div class="col-sm-7">
+			<ng-container *ngIf="detailItem">
+				<inspection-detail [inspection]="detailItem"></inspection-detail>
+			</ng-container>
+		</div>
+	</div>
+
+</div>
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'inspection-list',
@@ -6,11 +6,14 @@ import { Component, Input } from '@angular/core';
   providers: []
 })
 export class InspectionList  {
-  
+  @Output() 
+  notifyInspectionSelected : EventEmitter<any> = new EventEmitter<any>();
+
   @Input()
   inspections: any[];
   
   inspectionSelected(inspection: any) {
+    this.notifyInspectionSelected.emit(inspection);
     console.log(inspection);
   }
 }

@@ -2,7 +2,9 @@
 	<div class="row">
 		<form (ngSubmit)="submit()" class="form-inline">
 			<div class="form-group">
-				<input [(ngModel)]="searchIco"
+				<label for="icoInput">ičo:</label>
+				<input id="icoInput"
+					[(ngModel)]="searchIco"
 					placeholder="zadejte IČO..."
 					name="ico"
 					class="form-control" />
@@ -11,7 +13,7 @@
 				<span class="glyphicon glyphicon-search"></span>
 				<span>Vyhledat</span>
 			</button>
-			<span class="help-block">tip: 27082440, 29285640, 15714845, 28800389</span>
+			<span class="help-block">tip: 31950, 27082440, 29285640, 15714845, 28800389</span>
 		</form>
 	</div>
 </div>

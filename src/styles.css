@@ -6,4 +6,9 @@ h1 {
 
 .inspection-table td {
   cursor: pointer;
+  text-align: center;
+}
+
+.inspection-detail-table.borderless td, .inspection-detail-table.borderless th {
+  border: none;
 }

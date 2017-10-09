@@ -7,13 +7,14 @@ import { FormsModule } from '@angular/forms'
 import { CoiApp } from './coiApp';
 import { SearchForm }  from './searchForm';
 import { InspectionList }  from './inspectionList';
+import { InspectionDetail }  from './inspectionDetail';
 
 @NgModule({
   imports:      [ BrowserModule,
                   HttpClientModule,
                   HttpModule,
                   FormsModule ],
-  declarations: [ CoiApp, SearchForm, InspectionList ],
+  declarations: [ CoiApp, SearchForm, InspectionList, InspectionDetail ],
   bootstrap:    [ CoiApp ]
 })
 export class AppModule { }
