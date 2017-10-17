@@ -7,7 +7,9 @@
 					[(ngModel)]="searchIco"
 					placeholder="zadejte IČO..."
 					name="ico"
-					class="form-control" />
+					class="form-control"
+					required
+					autofocus>
 			</div>
 			<button type="submit" class="btn btn-info">
 				<span class="glyphicon glyphicon-search"></span>
@@ -17,7 +19,10 @@
 				<span style="color: grey; font-size:12px;">tip: 28528492, 31950, 27082440, 29285640, 15714845, 28800389</span>
 			</div>
 			<div>
-				<span class="result-count">Počet kontrol: {{resultCnt}}</span>		
+				<span class="result-count" *ngIf="company">{{company.name}}, {{company.place}}</span>
+			</div>
+			<div>
+				<span class="result-count" *ngIf="company">Počet kontrol: {{resultCnt}}</span>		
 			</div>
 		</form>
 	</div>

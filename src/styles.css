@@ -43,3 +43,7 @@ span.result-count {
 .inspection-block-table label {
   margin-bottom: 0px;
 }
+
+.ng-invalid .ng-touched input {
+ background-color: red;
+}
