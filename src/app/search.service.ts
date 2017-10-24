@@ -4,7 +4,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SearchService {
-	searchInspectionUrl: string = "http://localhost:8080/coi-rest/api/inspection/";
+	searchInspectionUrl: string = "http://localhost:8080/coi-rest/api/v1/inspections/";
 	searchOrganizationUrl: string ="https://or.justice.cz/ias/ui/rejstrik-$firma?p%3A%3Asubmit=x&.%2Frejstrik-%24&typHledani=STARTS_WITH&jenPlatne=VSECHNY&ico=";
 
 	constructor(private http: Http) { }
