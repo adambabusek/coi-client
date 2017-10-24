@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'inspection-detail',
-  templateUrl: 'app/html/inspectionDetail.html',
-  providers: []
+    selector: 'inspection-detail',
+    templateUrl: 'app/html/inspectionDetail.html',
+    providers: []
 })
-export class InspectionDetail  {
-	
-  @Input()
-  inspection: any;
-  
+export class InspectionDetail {
+
+    @Input()
+    inspection: any;
+
 }

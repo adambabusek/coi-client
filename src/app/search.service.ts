@@ -4,14 +4,13 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SearchService {
-	searchInspectionUrl: string = "http://localhost:8080/coi-rest/api/v1/inspections/";
-	searchOrganizationUrl: string ="https://or.justice.cz/ias/ui/rejstrik-$firma?p%3A%3Asubmit=x&.%2Frejstrik-%24&typHledani=STARTS_WITH&jenPlatne=VSECHNY&ico=";
+    searchInspectionUrl: string = "http://localhost:8080/coi-rest/api/v1/inspections/";
 
-	constructor(private http: Http) { }
+    constructor(private http: Http) { }
 
-	findInspections(ico: string): Promise<any> {
-		return this.http
-				.get(this.searchInspectionUrl + ico)
-				.toPromise().then((resp: Response) => {return resp.json();});
-	}
+    findInspections(ico: string): Promise<any> {
+        return this.http
+                    .get(this.searchInspectionUrl + ico)
+                    .toPromise().then((resp: Response) => { return resp.json(); });
+    }
 }

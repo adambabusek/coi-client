@@ -1,7 +1,7 @@
 <div class="text-center jumbotron">
 	<h1>Kontroly České obchodní inspekce</h1>
 	<p>
-		<search-form (notify)="searchResultNotify($event)"></search-form>
+		<search-form (notify)="searchResultNotify($event)" (notifyError)="userErrorNotify($event)"></search-form>
 	</p> 
 </div>
 

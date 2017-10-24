@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<form (ngSubmit)="submit()" class="form-inline">
-			<div class="form-group">
+			<div [ngClass]="{'form-group':true, 'has-error': (userError && userError.userMsg)}">
 				<label for="icoInput">ičo:</label>
 				<input id="icoInput"
 					[(ngModel)]="searchIco"
@@ -17,12 +17,15 @@
 			</button>
 			<div>
 				<span style="color: grey; font-size:12px;">tip: 28528492, 31950, 27082440, 29285640, 15714845, 28800389</span>
+            </div>
+            
+			<div>
+                <span class="search-result" *ngIf="company && company.ico">IČO: {{company.ico}}</span>                
+				<span class="search-result" *ngIf="company && company.name">, Název: {{company.name}}</span>
+				<span class="search-result" *ngIf="company && company.place">, Místo: {{company.place}}</span>
 			</div>
 			<div>
-				<span class="result-count" *ngIf="company">{{company.name}}, {{company.place}}</span>
-			</div>
-			<div>
-				<span class="result-count" *ngIf="company">Počet kontrol: {{resultCnt}}</span>		
+				<span class="search-result" *ngIf="company">Počet kontrol: {{resultCnt}}</span>		
 			</div>
 		</form>
 	</div>
